@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="662.0" prefWidth="987.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+<AnchorPane prefHeight="662.0" prefWidth="987.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customerController.CustomerFormController">
    <children>
-      <TabPane layoutX="42.0" layoutY="108.0" prefHeight="541.0" prefWidth="848.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="7.0" layoutY="90.0" prefHeight="571.0" prefWidth="945.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab fx:id="tabCustomerView" style="-fx-background-color: #F4A460; -fx-background-radius: 5; -fx-background-text: bold;" text="Customer View">
+          <Tab fx:id="tabCustomerView" style="-fx-background-color: #F4A460; -fx-background-radius: 5; -fx-background-text: bold;" text="Customer Table">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="486.0" prefWidth="830.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="502.0" prefWidth="894.0">
                      <children>
-                        <Pane layoutX="189.0" layoutY="87.0" prefHeight="322.0" prefWidth="498.0" />
-                        <TableView fx:id="tableCustView" layoutX="29.0" layoutY="39.0" prefHeight="334.0" prefWidth="770.0">
+                        <TableView fx:id="tableCustView" layoutX="48.0" layoutY="27.0" prefHeight="428.0" prefWidth="778.0" style="-fx-background-color: #87CEFA;">
                           <columns>
-                            <TableColumn fx:id="colCustomerId" prefWidth="75.0" text="CustomerID" />
+                              <TableColumn fx:id="colCustId" prefWidth="75.0" text="Customer ID" />
                             <TableColumn fx:id="colCustTitle" prefWidth="75.0" text="Title" />
                               <TableColumn fx:id="colCustname" prefWidth="120.0" text=" Name" />
                               <TableColumn fx:id="colCustBirthDate" prefWidth="100.79998779296875" text=" Date_of_birth" />
@@ -35,14 +38,94 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="tabItemView" style="-fx-background-color: #FA8072; -fx-background-radius: 5;" text="Item View">
+          <Tab fx:id="tabItemView" style="-fx-background-color: #FA8072; -fx-background-radius: 5;" text="Customer Info">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="281.0" prefWidth="484.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="281.0" prefWidth="484.0">
+                     <children>
+                        <Pane layoutX="79.0" layoutY="42.0" prefHeight="457.0" prefWidth="730.0" style="-fx-background-color: #FAFAD2;">
+                           <children>
+                              <Label layoutX="86.0" layoutY="45.0" prefHeight="24.0" prefWidth="115.0" text="Customer Id          :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="87.0" layoutY="93.0" prefHeight="24.0" prefWidth="114.0" text="Title                      : :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="87.0" layoutY="146.0" prefHeight="24.0" prefWidth="123.0" text="Customer Name      :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="87.0" layoutY="208.0" prefHeight="24.0" prefWidth="126.0" text="Date of birth           :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="87.0" layoutY="271.0" prefHeight="24.0" prefWidth="114.0" text="Salary                  :">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="420.0" layoutY="45.0" prefHeight="24.0" prefWidth="114.0" text="Address              :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="420.0" layoutY="93.0" prefHeight="24.0" prefWidth="114.0" text="City                     :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="420.0" layoutY="146.0" prefHeight="24.0" prefWidth="114.0" text="Province              :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="420.0" layoutY="208.0" prefHeight="24.0" prefWidth="114.0" text="Postal Code        :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnAdd" layoutX="86.0" layoutY="348.0" mnemonicParsing="false" onAction="#addOnBtn" prefHeight="32.0" prefWidth="61.0" style="-fx-background-color: #ADFF2F;" text="Add">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnUpdate" layoutX="230.0" layoutY="349.0" mnemonicParsing="false" onAction="#updateOnBtn" prefHeight="36.0" prefWidth="81.0" style="-fx-background-color: #87CEFA;" text="Update">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnDelete" layoutX="387.0" layoutY="349.0" mnemonicParsing="false" onAction="#deleteOnBtn" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: #FF4500;" text="Delete">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnClear" layoutX="561.0" layoutY="347.0" mnemonicParsing="false" onAction="#cleaerOnBtn" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #708090;" text="Clear">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="txtCustId" layoutX="222.0" layoutY="45.0" prefHeight="25.0" prefWidth="161.0" />
+                              <TextField fx:id="txtName" layoutX="222.0" layoutY="146.0" prefHeight="25.0" prefWidth="159.0" />
+                              <TextField fx:id="txtSalary" layoutX="218.0" layoutY="270.0" prefHeight="25.0" prefWidth="169.0" />
+                              <TextField fx:id="txtAddress" layoutX="537.0" layoutY="45.0" />
+                              <TextField fx:id="txtCity" layoutX="537.0" layoutY="92.0" />
+                              <DatePicker fx:id="datePickOfBirth" layoutX="221.0" layoutY="208.0" prefHeight="25.0" prefWidth="161.0" />
+                              <ComboBox fx:id="comboProvince" layoutX="534.0" layoutY="145.0" prefWidth="150.0" />
+                              <ComboBox fx:id="comboTitle" layoutX="221.0" layoutY="105.0" prefHeight="25.0" prefWidth="160.0" />
+                              <ComboBox fx:id="comboPostalCode" layoutX="536.0" layoutY="208.0" prefWidth="150.0" />
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
             </content>
           </Tab>
         </tabs>
       </TabPane>
-      <Pane layoutX="211.0" layoutY="34.0" prefHeight="53.0" prefWidth="536.0" style="-fx-background-color: #E0FFFF; -fx-border-color: #F08080; -fx-border-radius: 8; -fx-background-radius: 8;">
+      <Pane layoutX="181.0" layoutY="22.0" prefHeight="53.0" prefWidth="536.0" style="-fx-background-color: #E0FFFF; -fx-border-color: #F08080; -fx-border-radius: 8; -fx-background-radius: 8;">
          <children>
             <Label alignment="CENTER" layoutX="41.0" layoutY="11.0" prefHeight="32.0" prefWidth="427.0" text="Shop Managment System" textFill="#dc1130">
                <font>
