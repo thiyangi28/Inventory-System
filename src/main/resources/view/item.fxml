@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemController.ItemFormController">
+   <children>
+      <Pane layoutX="113.0" layoutY="49.0" prefHeight="50.0" prefWidth="565.0" style="-fx-background-color: #E0FFFF; -fx-border-color: #F08080; -fx-border-radius: 8;">
+         <children>
+            <Label alignment="TOP_CENTER" layoutX="104.0" layoutY="3.0" prefHeight="45.0" prefWidth="380.0" text="Item Managment" textFill="#e13c0a">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TabPane layoutX="29.0" layoutY="125.0" prefHeight="434.0" prefWidth="783.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab style="-fx-background-color: #F08080;" text="Item Table">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableItemView" layoutX="23.0" layoutY="15.0" prefHeight="365.0" prefWidth="742.0">
+                          <columns>
+                            <TableColumn fx:id="colItemCode" prefWidth="123.20001602172852" text="Item code" />
+                            <TableColumn fx:id="colDescription" prefWidth="178.3999481201172" text="Description" />
+                              <TableColumn fx:id="colPackSize" prefWidth="128.0" text="Pack Size" />
+                              <TableColumn fx:id="colUnitPrice" prefWidth="144.0" text="Unit Price" />
+                              <TableColumn fx:id="colStockQuantity" prefWidth="169.60003662109375" text="Stock Quantity" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: #CD853F;" text="Item Details">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="37.0" layoutY="32.0" prefHeight="339.0" prefWidth="704.0" style="-fx-background-color: #7FFFD4;">
+                           <children>
+                              <Label layoutX="188.0" layoutY="30.0" prefHeight="28.0" prefWidth="85.0" text="Item Code :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="185.0" layoutY="89.0" prefHeight="31.0" prefWidth="87.0" text="Description :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="191.0" layoutY="149.0" prefHeight="23.0" prefWidth="77.0" text="Pack Size :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="190.0" layoutY="209.0" prefHeight="27.0" prefWidth="84.0" text="Unit Price :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="165.0" layoutY="265.0" prefHeight="24.0" prefWidth="111.0" text="Stock Quantity  :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtItemCode" layoutX="307.0" layoutY="26.0" />
+                              <TextField fx:id="txtDescription" layoutX="307.0" layoutY="85.0" />
+                              <TextField fx:id="txtPrice" layoutX="307.0" layoutY="205.0" />
+                              <TextField fx:id="txtStockQuantity" layoutX="307.0" layoutY="261.0" />
+                              <ComboBox fx:id="comboPackSize" layoutX="306.0" layoutY="145.0" prefWidth="150.0" />
+                              <Button fx:id="btnClear" layoutX="566.0" layoutY="249.0" mnemonicParsing="false" onAction="#clearOnBtnAction" prefHeight="41.0" prefWidth="100.0" style="-fx-background-color: #708090;" text="Clear">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Button>
+                              <ButtonBar layoutX="-47.0" layoutY="216.0" prefHeight="40.0" prefWidth="200.0" />
+                              <Button fx:id="btnAdd" layoutX="568.0" layoutY="32.0" mnemonicParsing="false" onAction="#addOnBtnAction" prefHeight="36.0" prefWidth="87.0" style="-fx-background-color: #ADFF2F;" text="Add">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnUpdate" layoutX="570.0" layoutY="92.0" mnemonicParsing="false" onAction="#updateOnBtnAction" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #87CEFA;" text="Update">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnDelete" layoutX="571.0" layoutY="167.0" mnemonicParsing="false" onAction="#deleteOnBtnAction" prefHeight="36.0" prefWidth="92.0" style="-fx-background-color: #FF4500;" text="Delete">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
