@@ -153,7 +153,7 @@ public class CustomerFormController implements Initializable {
         @FXML
         void deleteOnBtn(ActionEvent event) {
             CustomerDto dto = new CustomerDto();
-            dto.setCustomerId(txtCustId.getText()); // only ID needed for delete
+            dto.setCustID(txtCustId.getText());
             customerControllerService.deleteCustomerDetails(dto);
             loadCustomerDetails();
         }
@@ -176,15 +176,15 @@ public class CustomerFormController implements Initializable {
 
 
             // Set table column bindings
-            colCustTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
-            colCustId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
-            colCustname.setCellValueFactory(new PropertyValueFactory<>("name"));
-            colCustBirthDate.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+            colCustTitle.setCellValueFactory(new PropertyValueFactory<>("CustTitle"));
+            colCustId.setCellValueFactory(new PropertyValueFactory<>("CustID"));
+            colCustname.setCellValueFactory(new PropertyValueFactory<>("CustName"));
+            colCustBirthDate.setCellValueFactory(new PropertyValueFactory<>("DOB"));
             colCustSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
-            colCustAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
-            colCustCity.setCellValueFactory(new PropertyValueFactory<>("city"));
-            colCustProvince.setCellValueFactory(new PropertyValueFactory<>("province"));
-            colCustpostcod.setCellValueFactory(new PropertyValueFactory<>("postalCode"));
+            colCustAddress.setCellValueFactory(new PropertyValueFactory<>("CustAddress"));
+            colCustCity.setCellValueFactory(new PropertyValueFactory<>("City"));
+            colCustProvince.setCellValueFactory(new PropertyValueFactory<>("Province"));
+            colCustpostcod.setCellValueFactory(new PropertyValueFactory<>("PostalCode"));
 
             loadCustomerDetails();
         }

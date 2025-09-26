@@ -12,13 +12,13 @@ import java.time.LocalDate;
 
 public class CustomerDto {
 
-    private String customerId;
-    private String title;
-    private String name;
-    private LocalDate dateOfBirth;
+    private String CustID;
+    private String CustTitle;
+    private String CustName;
+    private LocalDate DOB;
     private double salary;
-    private String address;
-    private String city;
-    private String province;
-    private String postalCode;
+    private String CustAddress;
+    private String City;
+    private String Province;
+    private String PostalCode;
 }

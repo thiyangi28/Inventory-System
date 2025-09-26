@@ -56,7 +56,7 @@ public class ItemController implements ItemControllerService {
              PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
 
             preparedStatement.setString(1, itemDto.getItemCode());
-            preparedStatement.executeUpdate(); // ✅ Required
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
